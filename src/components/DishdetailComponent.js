@@ -8,7 +8,7 @@ class DishDetail extends Component{
         if(null != arrComm)
         {
             return (
-                <div className="col-12 col-md-5 m-1">
+                <div>
                     <h4>{"Comments:"}</h4>  
                     {arrComm.map((val, ind, arr) => {
                         return (                    
@@ -36,15 +36,13 @@ class DishDetail extends Component{
     renderDish(dish){
         if(dish != null){
             return (
-                <div className="col-12 col-md-5 m-1">
-                    <Card>
-                        <CardImg width="100%" src={dish.image} alt={dish.name} />
-                        <CardBody>
-                            <CardTitle>{dish.name}</CardTitle>
-                            <CardText>{dish.description}</CardText>
-                        </CardBody>
-                    </Card>               
-                </div>
+                <Card>
+                    <CardImg width="100%" src={dish.image} alt={dish.name} />
+                    <CardBody>
+                        <CardTitle>{dish.name}</CardTitle>
+                        <CardText>{dish.description}</CardText>
+                    </CardBody>
+                </Card>               
             );
         }
         else 
@@ -56,8 +54,12 @@ class DishDetail extends Component{
     render(){
         return (
             <div className="row">
-                {this.renderDish(this.props.selectedDish)}
-                {this.renderComments((null != this.props.selectedDish) ? this.props.selectedDish.comments : null)}            
+                <div className="col-12 col-md-5 m-1">
+                    {this.renderDish(this.props.selectedDish)}
+                </div>
+                <div className="col-12 col-md-5 m-1">
+                    {this.renderComments((null != this.props.selectedDish) ? this.props.selectedDish.comments : null)} 
+                </div>                           
             </div>            
         );
     }
