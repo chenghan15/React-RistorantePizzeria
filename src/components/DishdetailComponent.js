@@ -10,21 +10,23 @@ class DishDetail extends Component{
             return (
                 <div>
                     <h4>{"Comments:"}</h4>  
-                    {arrComm.map((val, ind, arr) => {
-                        return (                    
-                                <div key={ind} >                                                    
-                                    <div>
-                                        <div>
+                    <ul className="list-unstyled">
+                        {arrComm.map((val, ind, arr) => {
+                            return (                    
+                                    <li key={ind}>                                                    
+                                        <p>
                                             {val.comment}
-                                        </div>
-                                        <div>
-                                            --{val.author}, {val.date}
-                                        </div>                            
-                                    </div>
-                                </div>   
-                            );                        
-                        }
-                    )}
+                                        </p>
+                                        <p>
+                                           
+                                            --{val.author}, {new Intl.DateTimeFormat('en-us', {year: 'numeric', month:'short', day: '2-digit'}).format(new Date(Date.parse(val.date)))}
+                                        </p>                            
+                                    </li>   
+                                );                        
+                            }
+                        )}
+                    </ul>
+
                 </div>                                     
             );
         }
