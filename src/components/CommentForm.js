@@ -51,7 +51,7 @@ class CommentForm extends Component{
 
                         <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
                             <Row className="form-group">
-                                <Label httmlFor="rating" md={5}>Rating</Label>
+                                <Label htmlFor="rating" md={5}>Rating</Label>
                                 <Col md={10}>
                                     <Control.select model=".rating" name="rating" defaultValue="5"
                                         className = "form-control">
@@ -64,7 +64,7 @@ class CommentForm extends Component{
                                 </Col>                                
                             </Row>                        
                             <Row className="form-group">
-                                <Label httmlFor="author" md={5}>Your Name</Label>
+                                <Label htmlFor="author" md={5}>Your Name</Label>
                                 <Col md={10}>
                                     <Control.text model=".author" id="author" name="author"
                                     placeholder="Your Name"
@@ -83,7 +83,7 @@ class CommentForm extends Component{
                                 </Col>
                             </Row>   
                             <Row className="form-group">
-                                <Label httmlFor="comment" md={5}>Comment</Label>
+                                <Label htmlFor="comment" md={5}>Comment</Label>
                                 <Col md={10}>
                                     <Control.textarea model=".comment" id="comment" name="comment"
                                     rows="12"
