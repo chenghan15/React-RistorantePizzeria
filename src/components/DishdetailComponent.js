@@ -5,7 +5,7 @@ import CommentForm from './CommentForm';
 import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
 
-    function RenderComments({arrComm, addComment, dishId}){        
+    function RenderComments({arrComm, postComment, dishId}){        
         if(null != arrComm)
         {
             return (
@@ -26,7 +26,7 @@ import { baseUrl } from '../shared/baseUrl';
                             }
                         )}                      
                     </ul>
-                    <CommentForm dishId = {dishId} addComment={addComment}/>
+                    <CommentForm dishId = {dishId} postComment={postComment}/>
                 </div>                                     
             );
         }
@@ -97,7 +97,7 @@ import { baseUrl } from '../shared/baseUrl';
                         </div>
                         <div className="col-12 col-md-5 m-1">
                             <RenderComments arrComm = {props.comments} 
-                            addComment={props.addComment}
+                            postComment={props.postComment}
                             dishId={props.dish.id}/>                          
                         </div>                           
                     </div>            
