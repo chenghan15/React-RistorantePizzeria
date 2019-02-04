@@ -9,7 +9,7 @@ import { baseUrl } from '../shared/baseUrl';
             <Card>
                 <Link to={`/menu/${dish.id}`}>
                     <CardImg width="100%" src={baseUrl + dish.image} alt={dish.name} />
-                    <CardImgOverlay body className="ml-5">
+                    <CardImgOverlay>
                         <CardTitle>{dish.name}</CardTitle>
                     </CardImgOverlay>
                 </Link>
